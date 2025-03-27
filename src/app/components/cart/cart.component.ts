@@ -18,9 +18,10 @@ export class CartComponent {
     console.log("Cart Updated:", this.cartItems);
   }
 
-  // removeFromCart(product: Product) {
-  //   this.cartItems = this.cartItems.filter(item => item.id !== product.id);
-  // }
+  removeFromCart(product: Product) {
+    //this.cartItems = this.cartItems.filter(item => item.id !== product.id);
+    this.cartService.removeItems(product.id);
+  }
 
   buyNow() {
     console.log('Cart Items:', JSON.stringify(this.cartItems, null, 2));

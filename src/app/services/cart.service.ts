@@ -22,6 +22,11 @@ export class CartService {
   clearCart() {
     this.cartItems.next([]);
   }
+
+  removeItems(productId : number){
+    const updatedCart = this.cartItems.value.filter(e => e.id !== productId);
+    this.cartItems.next(updatedCart);
+  }
   
 
   constructor() { }
